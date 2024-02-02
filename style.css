@@ -1,0 +1,914 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    padding-bottom: 0;
+    /* overflow: hidden; */
+    
+}
+#main{
+    width: 100%;
+    overflow: auto;
+}
+#loader{
+    /* display: none; */
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    z-index: 999999999;
+    color: white;
+}
+#loader #topheading{
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+#topheading>h5{
+    text-align: center;
+    text-transform: uppercase;
+    font-size:12px;
+    font-weight: 500px;
+}
+#loader h1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 3vw;
+    font-weight: 400;
+
+}
+#loader h1 span{
+
+color: #ffffff;
+font-size: 7vh;
+}
+
+.reveal .parent{
+    
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow-y: hidden;
+}
+.reveal .parent .child{
+    display: block;
+}
+.parent .child span{
+    display: inline-block;
+}
+#green{
+    /* display: none; */
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 0vh;
+    z-index: 999;
+    background-color: #14CF93;
+}
+#home{
+    width: 100%;
+    min-height: 200vh;
+    background-color: #ffffff;
+    overflow-y: hidden;
+}
+#home #nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5vw;
+    width: 100%;
+    height: 100px;
+   
+}
+#nav a{
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    color: black;
+}
+#nav a .line{
+    position: absolute;
+    /* right: 0; */
+    bottom: 0;
+    display: inline-block;
+    
+    height: 1px;
+    background-color: black;
+     
+}
+#line1{
+    left: 0;
+    width: 0%;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+    transition-delay: 0.2s; 
+}
+#line2{
+    right: 0;
+    width: 100%;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+#nav a:hover #line1{
+    width:100%;
+}
+#nav a:hover #line2{
+    width: 0%;
+}
+.row{
+    margin-top: 5vw;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: #333;
+    padding: 0 7vw;
+    line-height: 1;
+    padding-right: 12vw;
+}
+.row h1{
+    font-size: 11vw;
+    font-weight: 500;
+}
+.row .text{
+    display: none;
+    margin-top: 5vw;
+}
+.row h5{
+    opacity: .6;
+    font-size: 11px;
+    font-weight: 500;
+}
+.row:nth-child(3){
+    margin-top: 0;
+}
+#home .arrow{
+    height: 9vw;
+}
+#home .arrow img{
+    position: relative;
+    animation: arrow-animation 2s infinite alternate;
+}
+#imagery{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 7vw;
+    margin-top: 24vw;
+    /* background-color: yellow; */
+}
+#imagery #imglef{
+    width:30%;
+    height: auto;
+    /* background-color: red; */
+}
+#imglef h1{
+    font-size:2vw;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 1px;
+}
+#imglef h1 span{
+ color: rgb(14, 93, 66);
+ font-family: 'Pacifico', cursive;
+ letter-spacing: 2px;
+}
+#imgrig {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 60%;
+    background-color: yellow;
+    height: auto;
+}
+#imgrig .imgcntnr{
+    position: absolute;
+    border-radius: 1vw;
+    width: 30vw;
+    height: 35vw;
+    filter: grayscale();
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 5s;
+    background-color: red;
+}
+#imgrig .imgcntnr:hover{
+    filter: grayscale(0);
+}
+#imgrig .imgcntnr:nth-child(1){
+  transform: translate(-20%,-8%) rotate(-20deg);
+  background-image: url("./ved.png");
+  background-size: cover;
+  background-position: center;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 2s;
+}
+#imgrig .imgcntnr:nth-child(1):hover{
+    transform: translate(-40%,-8%) rotate(-40deg);
+  }
+#imgrig .imgcntnr:nth-child(2){
+    transform: translate(0%,0%) rotate(-15deg);
+    /* background-color: rgb(61, 0, 231); */
+    background-image: url("./pic2.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+#imgrig .imgcntnr:nth-child(2):hover{
+    transform: translate(-40%,-8%) rotate(-40deg);
+  }
+  #imgrig .imgcntnr:nth-child(3){
+    transform: translate(20%,10%) rotate(-5deg);
+    background-image: url("./vedapot.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+#techstack{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 7vw;
+   width: 100%;
+    margin-top: 2vw;
+    background-color: #f0f0f0;
+    padding: 0 7vw;
+    padding-bottom: 17vw;
+  }
+#techstack h1{
+     margin-top: 20vw;
+     letter-spacing: 2px;
+  }
+#techstack h1 span{
+    font-family:'Pacifico', cursive;
+    letter-spacing: 0.3vw;
+}
+#techstack .container {
+    font-size: 6px;
+    width: 40em;
+    height: 40em;
+    position: relative;
+}
+.container img{
+    height: 130%;
+    width: 130%;
+}
+.sun {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 15em;
+    left: 15em;
+    width: 5vw;
+    height: 5vh;
+    border-radius: 50%;
+    animation: orbit 50s linear infinite;
+}
+.mercury,
+.venus,
+.earth,
+.moon,
+.mars,
+.jupiter,
+.saturn,
+.uranus,
+.neptune,
+.pluto {
+    position: absolute;
+    border-style: solid;
+    border-color: rgb(0, 0, 0) transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+}
+.mercury {
+    display: None;
+    top: 12.5em;
+    left: 12.5em;
+    width: 15em;
+    height: 15em;
+    animation: orbit 68.7s linear infinite;
+}
+
+.venus {
+    display: none;
+    top: 10em;
+    left: 10em;
+    width: 20em;
+    height: 20em;
+    animation: orbit 48.7s linear infinite;
+}
+
+.earth {
+    display: none;
+    top: 6em;
+    left: 6em;
+    width: 5vw;
+    height: 5vh; 
+    animation: orbit 36.5s linear infinite;   
+}
+.moon {
+    display: none;
+    top: 2em;
+    right: -1em;
+    width: 7em;
+    height: 7em; 
+    animation: orbit 2.7s linear infinite;
+}
+.mars {
+    top: 2em;
+    left: 2.5em;
+    width: 45em;
+    height: 45em; 
+    animation: orbit 26.5s linear infinite;
+}
+.jupiter {
+    top: -2em;
+    left: -2em;
+    width: 45em;
+    height: 45em; 
+    animation: orbit 21s linear infinite;
+}
+.saturn {
+    top: -7em;
+    left: -7em;
+    width: 70em;
+    height: 70em; 
+    animation: orbit 17s linear infinite;
+}
+.uranus {
+    top: -12em;
+    left: -12em;
+    width: 70em;
+    height: 70em; 
+    animation: orbit 19s linear infinite;
+}
+.neptune {
+    top: -17em;
+    left: -17em;
+    width: 75em;
+    height: 75em; 
+    animation: orbit 15s linear infinite;
+}
+.pluto {
+    top: -22em;
+    left: -22em;
+    width: 85em;
+    height: 85em; 
+    animation: orbit 18s linear infinite;
+}
+
+.mercury::before,
+.venus::before,
+.earth::before,
+.moon::before,
+.mars::before,
+.jupiter::before,
+.saturn::before,
+.uranus::before,
+.neptune::before,
+.pluto::before{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    animation: orbit 30s linear infinite;
+}
+.mercury::before {
+    top: 1.5em;
+    right: 0.8em;
+    width: 2em;
+    height: 2em;
+    background-image: url('./images/html.jpeg');
+    background-size: cover;
+}
+.venus::before {
+    top: 2em;
+    right: 2em;
+    width: 2em;
+    height: 2em;
+    background-image: url('./images/venus.png');
+    background-size: cover;
+}
+.earth::before {
+    top: 3em;
+    right: 0em;
+    width: 5em;
+    height: 5em;
+    background-image: url('./images/rea.png');
+    background-size: cover;
+}
+
+.moon::before {
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    background-image: url('./images/moon.png');
+    background-size: cover;
+}
+.mars::before {
+    top: 5em;
+    right: 3em;
+    width: 3em;
+    height: 3em;
+    background-image: url('./images/rea.png');
+    background-size: cover;
+}
+.jupiter::before {
+    top: 6em;
+    right: 3em;
+    width: 5em;
+    height: 5em;
+    background-image: url('./images/rea.png');
+    background-size: cover;
+}
+.saturn::before {
+    top: 7.5em;
+    right: 5em;
+    width: 6.5em;
+    height: 6.5em;
+    background-color: black;
+    background-image: url('./images/android.png');
+    background-size: cover;
+}
+.uranus::before {
+    top: 9em;
+    right: 6.5em;
+    width: 5em;
+    height: 5em;
+    background-image: url('./images/database.jpg');
+    background-size: cover;
+}
+.neptune::before {
+    top: 10em;
+    right: 8em;
+    width: 4em;
+    height: 4em;
+    background-image: url('./images/neptune.png');
+    background-size: cover;
+}
+.pluto::before {
+    top: 11em;
+    right: 10em;
+    width: 4em;
+    height: 4em;
+    background-image: url('./images/pluto.png');
+    background-size: cover;
+}
+
+.star {
+    position: absolute;
+    background-color: rgb(255, 251, 251);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+@keyframes orbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#language{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 1vw;
+    padding-bottom: 2vw;
+    background-color: #F2F2F2;
+}
+#language h1{
+    font-size: 3vw;
+    letter-spacing: 3px;
+    font-weight: 600;
+    /* font-family: 'Lobster', sans-serif; */
+    border-bottom: 2px solid black;
+}
+#spp{
+    color: #14CF93;
+    font-family: 'Pacifico', cursive;
+}
+#language #ls{
+    display: flex;
+    justify-content: space-between;
+    gap:2vw;
+}
+#language #ls h4{
+    font-size: 2vw;
+    color: #333;
+    border-bottom: 1px solid #333;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 2s;
+}
+#language #ls h4:hover{
+    font-size: 2.5vw;
+    color: rgb(14, 93, 66);
+    border-bottom:none;
+}
+#work{
+    transition: background-color cubic-bezier(0.19, 1, 0.22, 1) 2s;
+    padding-top: 150px;
+    position: relative;
+    width: 100%;
+    /* min-height: 70vh; */
+    background-color: #F2F2F2;
+}
+#work::before{
+    content: "";
+    position: absolute;
+    
+    width: 100%;
+    /* height: 150px; */
+    transform: rotate(-180deg);
+    /* background-image: url(https://abhishekjha.me/rip.f6d7c4dd.svg); */
+    background-size: cover;
+}
+#work .workrow{
+    padding: 0 12vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.workrow h1{
+    font-size: 5vw;
+    font-weight: 600;
+
+}
+.workrow h1 span{
+    color: #14CF93;
+    font-family: 'Pacifico', cursive;
+}
+.o-ui-arrow{
+transform: rotate(90deg);
+}
+.o-ui-arrow path{
+    stroke: #2fa46b;
+}
+#images{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-top: 6vw;
+    position: relative;
+    width: 100%;
+padding: 0 5vw;
+padding-bottom: 3vw;
+}
+.cnt{
+    
+    overflow: hidden;
+    border-radius: 50px;
+}
+.cnt img{
+    transition: filter cubic-bezier(0.19, 1, 0.22, 1) 2s;
+    width: 105%;
+}
+.cnt1{
+    cursor: crosshair;
+    width: 55%;
+}
+.cnt2{
+    cursor: crosshair;
+    width: 28%;
+    border-radius: 5vw;
+}
+#project1{
+    position: relative;
+    background-color: white;
+    z-index: 99;
+    left: 1vw;
+    top: 1.5vw;
+    padding: 0.5vw 2vw;
+    border-radius: 3vw;
+    text-decoration: none;
+}
+#project2{
+    position: relative;
+    background-color: white;
+    top: 2vw;
+    z-index: 99;
+    padding: 0.5vw 2vw;
+    border-radius: 3vw;
+    text-decoration: none;
+}
+#cursor{
+    position: fixed;
+    pointer-events: none;
+    width: 17vw;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+#cursor>div{
+    pointer-events: none;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+    opacity: 0;
+    position: absolute;
+}
+#elem{
+    width: 100%;
+    position: relative;
+}
+#cursor .crow{
+    display: flex;
+    align-items: center;
+    grid:20px;
+    width: 100%;
+    padding: .7vw;
+}
+.crow .ccircle{
+    width: 2vw;
+    height: 2vw;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+.crow .ccapsule{
+    padding: .7vw 3vw;
+    border-radius: 100px;
+    background-color: #fff;
+}
+#elem img{
+    width:100%;
+    opacity: 0;
+    animation: an 4s linear infinite;
+    position: absolute;
+}
+#elem img:nth-child(2){
+    animation-delay: 1s;
+}
+#elem img:nth-child(3){
+    animation-delay: 2s;
+}
+#elem img:nth-child(4){
+    animation-delay: 3s;
+}
+#elem img:nth-child(5){
+    animation-delay: 4s;
+}
+#pr{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50vw;
+    padding: 0 10vw;
+    overflow: hidden;
+
+}
+#pr #pr1{
+    position: relative;
+    height: 60%;
+    width: 40%;
+    background-color: yellow;
+    background-image: url("./images/mac_2.png");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center;
+    border-radius: 3vw;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+    filter:grayscale(0);
+}
+#pr #pr1:hover{
+width: 35%;
+}
+#link3{
+    position: relative;
+    text-decoration: none;
+    background-color: aqua;
+    padding: 1%;
+    border-radius: 23%;
+    top: 4%;
+    left: 5%;
+    transition: 1s;
+}
+#link3:hover{
+    top: 5%;
+    background-color: rgb(255, 255, 255);
+}
+#pr #pr2{
+    position: relative;
+    height: 90%;
+    width: 50%;
+    background-image: url("./images/vibe_together.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 3vw;
+}
+#link4{
+    position: relative;
+    text-decoration: none;
+    background-color: aqua;
+    padding: 1%;
+    border-radius: 23%;
+    top: 4%;
+    left: 5%;
+    transition: 1s;
+}
+#link4:hover{
+    top: 5%;
+    background-color: rgb(255, 255, 255);
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    background-color: #000000;
+}
+.footer #footer1{
+display: flex;
+justify-content: center;
+color: white;
+}
+#footer1 h1{
+    font-size: 3vw;
+    font-weight: 400vw;
+}
+#footer2{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 3vh;
+}
+#footer2 #contactus{
+    background-color: rgb(0, 0, 0);
+    padding: 2vw;
+    margin: 1vw;
+    border-radius: 2vw;
+    border: 1px solid white;
+    transition: 1s;
+}
+#contactus:hover{
+    box-shadow: 0 0 50px 15px #48abe0;
+}
+#contactus a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+#discuss{
+    background-color: rgb(0, 0, 0);
+    padding: 2vw;
+    margin: 1vw;
+    border-radius: 2vw;
+    border: 1px solid white;
+    transition: 1s;
+}
+#discuss:hover{
+    box-shadow: 0 0 50px 15px #48abe0;
+}
+#discuss a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+#footer3{
+    padding:0 3vw;
+    display: flex;
+    justify-content: space-between;
+}
+#footer3 a{
+ background-color: rgb(0, 0, 0);
+ text-decoration: none;
+ padding:1vw 2vw;
+ color: white;
+ border-top: 1px solid bisque;
+ border-radius: 3vw;
+ transition: 1s;
+}
+#footer3 a:hover{
+    /* background-color: #14CF93;
+    color: #000000;
+    border-top: 0;
+    border-bottom: 1 px solid rgb(0, 0, 0); */
+    border-top: none;
+    box-shadow: 0 0 50px 15px #ffffff;
+    border-bottom: 1px solid bisque;
+}
+.git{
+    height: 3vw;
+    width: 3vw;
+}
+#footer4{
+    padding:0 3vw;
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    color: #787474;
+    font-size: 1vw;
+    align-items: center;
+
+    padding:7vw 0;
+} 
+
+
+
+
+
+
+
+@keyframes an{
+    0%{
+        opacity: 1;
+    }
+    20%{
+        opacity: 1;
+    }
+    21%{
+        opacity: 0;
+    }
+    40%{
+        opacity: 0;
+    }
+    60%{
+        opacity: 0;
+    }
+    80%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
+
+@keyframes arrow-animation{
+0%{top:-10%}
+100%{top:10%}
+}
+@media only screen and (max-width: 600px) {
+    .row{
+        flex-direction: column;
+    }
+    .row #wa{
+        align-items: center;
+    }
+    #one{
+        padding-left:0%
+    }
+    #techstack .container{
+        display: none;
+    }
+    #images{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #work{
+        padding-top: 0%;
+    }
+    #cursor{
+        display: none;
+    }
+    .cnt {
+        height: 15%;
+        padding-bottom: 3%;
+    }
+    .cnt1{
+        cursor: crosshair;
+        width: 55%;
+    }
+    .cnt2{
+        cursor: crosshair;
+        width: 55%;
+        
+    }
+    #project1{
+        top: 8.5vw;
+        border-radius: 5vw;
+    }
+    #pr{
+        flex-direction: column;
+        align-items: center;
+        height: 150vw;
+    }
+    #pr #pr1{
+
+        height: 70vw;
+        width: 55%;
+
+    }
+    #pr #pr2{
+
+        height: 70vw;
+        width: 55%;
+
+    }
+
+  }
+
