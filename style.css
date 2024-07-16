@@ -274,10 +274,13 @@ font-size: 7vh;
     position: absolute;
     top: 15em;
     left: 15em;
-    width: 5vw;
-    height: 5vh;
+    width: 3vw;
+    height: 3vw;
     border-radius: 50%;
     animation: orbit 50s linear infinite;
+    -webkit-box-shadow: -1px -5px 29px 7px rgba(23,87,13,1);
+    -moz-box-shadow: -1px -5px 29px 7px rgba(23,87,13,1);
+    box-shadow: -1px -5px 29px 7px rgba(23,87,13,1);
 }
 .mercury,
 .venus,
@@ -410,6 +413,9 @@ font-size: 7vh;
     height: 5em;
     background-image: url('./images/rea.png');
     background-size: cover;
+    -webkit-box-shadow: 7px -5px 29px 4px rgba(24,66,125,1);
+-moz-box-shadow: 7px -5px 29px 4px rgba(24,66,125,1);
+box-shadow: 7px -5px 29px 4px rgba(24,66,125,1);
 }
 
 .moon::before {
@@ -427,6 +433,9 @@ font-size: 7vh;
     height: 3em;
     background-image: url('./images/rea.png');
     background-size: cover;
+    -webkit-box-shadow: 7px -5px 29px 4px rgba(24,66,125,1);
+-moz-box-shadow: 7px -5px 29px 4px rgba(24,66,125,1);
+box-shadow: 7px -5px 29px 4px rgba(24,66,125,1);
 }
 .jupiter::before {
     top: 6em;
@@ -435,23 +444,34 @@ font-size: 7vh;
     height: 5em;
     background-image: url('./images/rea.png');
     background-size: cover;
+    -webkit-box-shadow: 7px -5px 29px 4px rgba(24,66,125,1);
+-moz-box-shadow: 7px -5px 29px 4px rgba(24,66,125,1);
+box-shadow: 7px -5px 29px 4px rgba(24,66,125,1);
 }
 .saturn::before {
     top: 7.5em;
     right: 5em;
     width: 6.5em;
     height: 6.5em;
-    background-color: black;
-    background-image: url('./images/android.png');
-    background-size: cover;
+    /* background-color: black; */
+    background-image: url('./images/mongo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    -webkit-box-shadow: -1px -5px 29px -2px rgba(79,217,54,1);
+-moz-box-shadow: -1px -5px 29px -2px rgba(79,217,54,1);
+box-shadow: -1px -5px 29px -2px rgba(79,217,54,1);
+
 }
 .uranus::before {
     top: 9em;
     right: 6.5em;
     width: 5em;
     height: 5em;
-    background-image: url('./images/database.jpg');
+    background-image: url('./images/socketio.png');
     background-size: cover;
+    -webkit-box-shadow: -1px -5px 29px -2px rgba(5,28,1,1);
+-moz-box-shadow: -1px -5px 29px -2px rgba(5,28,1,1);
+box-shadow: -1px -5px 29px -2px rgba(5,28,1,1);
 }
 .neptune::before {
     top: 10em;
@@ -667,14 +687,15 @@ padding-bottom: 3vw;
     height: 50vw;
     padding: 0 10vw;
     overflow: hidden;
+    flex-wrap: wrap;
 
 }
 #pr #pr1{
     position: relative;
     height: 60%;
-    width: 40%;
+    width: 60%;
     background-color: yellow;
-    background-image: url("./images/mac_2.png");
+    background-image: url("./images/p1_1.png");
     background-size:cover;
     background-repeat: no-repeat;
     background-position:center;
@@ -685,6 +706,11 @@ padding-bottom: 3vw;
 #pr #pr1:hover{
 width: 35%;
 }
+
+
+
+
+
 #link3{
     position: relative;
     text-decoration: none;
@@ -702,7 +728,7 @@ width: 35%;
 #pr #pr2{
     position: relative;
     height: 90%;
-    width: 50%;
+    width: 30%;
     background-image: url("./images/vibe_together.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -723,6 +749,124 @@ width: 35%;
     top: 5%;
     background-color: rgb(255, 255, 255);
 }
+
+/* card */
+#next{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50vw;
+    padding: 3vw 10vw;
+    overflow: hidden;
+    background-image: linear-gradient(rgb(255, 255, 255), rgb(30, 30, 28));;
+    /* flex-wrap: wrap; */
+
+}
+.cards {
+    perspective: 500px;
+  }
+  
+  .card {
+    margin-top: 2%;
+    width: 20vw;
+    height: 70%;
+    background: #16161d;
+    border: 2px solid #555555;
+    border-radius: 4px;
+    position: relative;
+    background-image: url("./images/2_2nd.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: transform .5s;
+  }
+  
+  .card:hover {
+    transform: translateZ(10px) rotateX(20deg) rotateY(20deg);
+  }
+  
+  .card_title {
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    transition: transform .5s;
+    font: 700 1.5rem monospace;
+    text-shadow: -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+  }
+  
+  .card:hover .card_title {
+    transform: translateZ(50px);
+  }
+
+  .card2 {
+    width: 40vw;
+    height: 30vw;
+    perspective: 1000px;
+  }
+  
+  .card2-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.999s;
+  }
+  
+  .card2:hover .card2-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card2-front,
+  .card2-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .card2-front {
+    background-color: #6A2C70;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    background-image: url(./images/mac_2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid #878687;
+    border-radius: 10px;
+    justify-content: center;
+    font-size: 24px;
+    transform: rotateY(0deg);
+  }
+  
+  .card2-back {
+    background-color: #312f2e;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border: 10px solid #000000;
+    border-radius: 10px;
+    justify-content: center;
+    font-size: 24px;
+    transform: rotateY(180deg);
+  }
+  
+  
+  
+  
+  
+
+
+
+
+
 .footer{
     display: flex;
     flex-direction: column;
@@ -896,6 +1040,9 @@ color: white;
         flex-direction: column;
         align-items: center;
         height: 150vw;
+    }
+    #next{
+        display: none;
     }
     #pr #pr1{
 
